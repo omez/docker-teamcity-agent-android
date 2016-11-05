@@ -1,10 +1,8 @@
-FROM jetbrains/teamcity-agent
+FROM omez/teamcity-agent-default
 MAINTAINER Alexander Sergeychik <alexander.sergeychik@gmail.com>
 
 ENV ANDROID_SDK_VERSION 24.4.1
 ENV ANDROID_SDK_TOOLS 1,2,3,4,5,6,24,34
-
-#ADD setup-agent.sh /setup-agent.sh
 
 RUN apt-get update && \
 	apt-get install -y wget unzip git \
@@ -18,4 +16,6 @@ RUN echo y | android update sdk --no-ui -a --filter $ANDROID_SDK_TOOLS
 	#1,2,3,4,5,6,24,34
 	#android-21,tool,platform-tool,build-tools-21.1.2,extra-android-support,extra-android-m2repository 
 
+
+#ADD setup-agent.sh /setup-agent.sh
 #RUN adduser teamcity
