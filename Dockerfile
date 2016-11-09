@@ -2,7 +2,7 @@ FROM omez/teamcity-agent-default
 MAINTAINER Alexander Sergeychik <alexander.sergeychik@gmail.com>
 
 ENV ANDROID_SDK_VERSION 24.4.1
-ENV ANDROID_SDK_TOOLS android,platform-tools,tool,extra-android-support,extra-android-m2repository
+ENV ANDROID_SDK_TOOLS platform,platform-tools,tool,extra-android-support,extra-android-m2repository
 
 RUN apt-get update && \
 	apt-get install -y wget unzip git \
